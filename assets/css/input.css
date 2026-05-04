@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Base
+========================= */
+@layer base {
+    body {
+      @apply font-sans text-gray-900;
+    }
+  
+    h1, h2, h3, h4 {
+      @apply font-semibold tracking-tight;
+    }
+  
+    p {
+      @apply leading-relaxed;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+
+
+  @theme {
+   --color-primary: 234 190 60;
+  }
+
+/* =========================
+   Components
+========================= */
+@layer components {
+ 
+}
+
+/* =========================
+   Utilities
+========================= */
+@layer utilities {
+
+    .swiper-pagination{
+        @apply !bottom-12
+    }
+
+ .swiper-pagination .swiper-pagination-bullet{
+    @apply bg-primary w-10 h-1 rounded-none
+ }
+
+ .navigation{
+    @apply flex justify-end items-center gap-8
+ }
+
+ .navigationLinks{
+    @apply uppercase font-medium text-sm
+ }
+
+ .primaryBtn {
+   @apply text-white uppercase px-6 py-4 inline-block font-normal leading-normal tracking-wide cursor-pointer bg-primary;
+  
+}
+
+}
+
+
+
+.accordion {
+   margin-top: 24px;
+ }
+ .accordion .accordionItem {
+   padding-bottom: 24px;
+ }
+ @media (min-width: 1024px) {
+   .accordion .accordionItem {
+     padding-bottom: 56px;
+   }
+   .accordion .accordionItem:last-child {
+     padding-bottom: 0;
+   }
+ }
+ .accordion .accordionItem .accordionHead {
+   padding-bottom: 16px;
+   border-bottom: 1px solid #f6c8cb;
+ }
+ .accordion .accordionItem .accordionHead h5 {
+   color: #18181b;
+   font-weight: 500;
+   font-size: 20px;
+   line-height: 100%;
+ }
+ @media (min-width: 1024px) {
+   .accordion .accordionItem .accordionHead h5 {
+     font-size: 32px;
+   }
+ }
+ .accordion .accordionItem .accordionHead p {
+   color: #3f3f46;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 150%;
+   margin-top: 4px;
+ }
+ @media (min-width: 1024px) {
+   .accordion .accordionItem .accordionHead p {
+     font-size: 18px;
+     margin-top: 8px;
+   }
+ }
+ 
+ @media (max-width: 768px) {
+   .accordionBody {
+     max-height: 0;
+     overflow: hidden;
+     -webkit-transition: max-height 0.45s ease;
+     transition: max-height 0.45s ease;
+   }
+   .accordionItem .accordionHead {
+     position: relative;
+     padding-right: 20px;
+   }
+   .accordionItem .accordionHead .accordionIcon {
+     position: absolute;
+     right: 0;
+     top: 0;
+   }
+   .accordionItem.active .accordionBody {
+     max-height: 2000px;
+   }
+   .accordionItem.active .accordionIcon {
+     -webkit-transform: rotate(180deg);
+             transform: rotate(180deg);
+   }
+   .accordionItem.open .accordionIcon, .accordionItem.footer-active .accordionIcon {
+     -webkit-transform: rotate(180deg);
+             transform: rotate(180deg);
+   }
+   .accordionIcon {
+     font-size: 26px;
+     -webkit-transition: -webkit-transform 0.35s ease;
+     transition: -webkit-transform 0.35s ease;
+     transition: transform 0.35s ease;
+     transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+   }
+   .accordionHead {
+     cursor: pointer;
+   }
+ }
+ @media (min-width: 769px) {
+   .accordionBody {
+     max-height: none !important;
+     overflow: visible;
+   }
+   .accordionIcon {
+     display: none;
+   }
+ }
+ 
+
+ 
+.footerAccordions .accordionItem {
+   padding-bottom: 0px;
+ }
+ .footerAccordions .accordionItem:last-child {
+   margin-top: 20px;
+ }
+ @media (min-width: 769px) {
+   .footerAccordions .accordionItem:last-child {
+     margin-top: 0;
+   }
+ }
+ .footerAccordions .accordionItem .accordionHead {
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 150%;
+   color: #ffffff;
+   padding-bottom: 0;
+   border-bottom: none;
+ }
+ .footerAccordions .accordionItem .accordionBody ul {
+   margin-top: 12px;
+ }
+ .footerAccordions .accordionItem .accordionBody ul li {
+   margin-bottom: 8px;
+ }
+ .footerAccordions .accordionItem .accordionBody ul li:last-child {
+   margin-bottom: 0;
+ }
+ .footerAccordions .accordionItem .accordionBody ul li a {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 150%;
+   color: #fff;
+ }
+ 

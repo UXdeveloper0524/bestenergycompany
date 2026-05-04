@@ -1,0 +1,18 @@
+{
+  "name": "bestenergycompany-html",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.13",
+    "tailwindcss": "^3.4.13"
+  }
+}
