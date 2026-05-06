@@ -210,21 +210,69 @@ $.fn.dynamicSwiper = function () {
             } : false;
         }
 
-        // ----------------------------
-        // INIT SWIPER
-        // ----------------------------
+     // ----------------------------
+// INIT SWIPER (FIXED LOOP)
+// ----------------------------
 
-        try {
+try {
 
-            const swiper = new Swiper(el, base);
+    const slides = el.querySelectorAll('.swiper-slide');
+    const slidesCount = slides.length;
 
-            swiper.on('slideChangeTransitionEnd', () => {
-                document.dispatchEvent(new Event('swiperSlideChange'));
-            });
+    // ----------------------------
+    // LOOP FIX LOGIC
+    // ----------------------------
 
-        } catch (err) {
-            console.warn("Swiper init failed:", err, el);
+    if (base.loop) {
+
+        // get MAX slidesPerView across breakpoints
+        const bpValues = [
+            base.slidesPerView,
+            base.breakpoints[0]?.slidesPerView,
+            base.breakpoints[768]?.slidesPerView,
+            base.breakpoints[1024]?.slidesPerView
+        ];
+
+        // convert "auto" to 1 for safety
+        const maxSlidesPerView = Math.ceil(
+            Math.max(...bpValues.map(v => v === "auto" ? 1 : Number(v) || 1))
+        );
+
+        // ❌ Not enough slides → disable loop
+        if (slidesCount <= maxSlidesPerView) {
+            base.loop = false;
+        } 
+        else {
+            // ✅ Proper loop setup
+            base.loopedSlides = slidesCount;
+            base.loopAdditionalSlides = slidesCount;
         }
+
+        // ❗ Fix conflicts
+        base.centeredSlides = false;
+        base.freeMode = false;
+    }
+
+    // ----------------------------
+    // OBSERVER FIX (important)
+    // ----------------------------
+
+    base.observer = true;
+    base.observeParents = true;
+
+    // ----------------------------
+    // INIT
+    // ----------------------------
+
+    const swiper = new Swiper(el, base);
+
+    swiper.on('slideChangeTransitionEnd', () => {
+        document.dispatchEvent(new Event('swiperSlideChange'));
+    });
+
+} catch (err) {
+    console.warn("Swiper init failed:", err, el);
+}
 
     });
 };
