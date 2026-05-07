@@ -194,3 +194,29 @@
    color: #fff;
  }
  
+
+
+ .service-rule {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(15,31,68,0.08) 0%, rgba(15,31,68,0.18) 70%, rgba(15,31,68,0.05) 100%);
+  border-radius: 2px;
+}
+.service-rule::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 56px;
+  height: 8px;
+  background: linear-gradient(135deg, #e6b955, #b8862a);
+  transform: skewX(-14deg);
+  border-radius: 1px;
+  box-shadow: 0 6px 12px -4px rgba(212,162,58,0.5);
+}
+
+.service-card:hover .service-rule::after {
+  width: 84px;
+  transition: width .4s ease;
+}
+.service-rule::after { transition: width .4s ease; }
