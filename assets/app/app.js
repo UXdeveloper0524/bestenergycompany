@@ -442,7 +442,7 @@ class AnimatedNavbar {
       this.menu = document.getElementById(menuId);
       this.navItems = document.querySelectorAll(navItemSelector);
   
-      this.breakpoint = breakpoint; // lg = 1024px
+      this.breakpoint = breakpoint;
       this.menuOpen = false;
   
       this.init();
@@ -455,13 +455,31 @@ class AnimatedNavbar {
     init() {
       if (!this.menuBtn || !this.menu) return;
   
-      // Initial setup
       this.handleResize();
   
-      // Events
+      // Toggle Menu
       this.menuBtn.addEventListener("click", () => {
-        if (!this.isMobile()) return; // 🚫 ignore on desktop
+        if (!this.isMobile()) return;
         this.toggleMenu();
+      });
+  
+      // Nav Item Click
+      this.navItems.forEach((item) => {
+        item.addEventListener("click", () => {
+  
+          // Remove active class from all
+          this.navItems.forEach((nav) => {
+            nav.classList.remove("active");
+          });
+  
+          // Add active class to clicked item
+          item.classList.add("active");
+  
+          // Close mobile menu
+          if (this.isMobile()) {
+            this.closeMenu();
+          }
+        });
       });
   
       window.addEventListener("resize", () => this.handleResize());
@@ -469,11 +487,14 @@ class AnimatedNavbar {
   
     handleResize() {
       if (this.isMobile()) {
-        // Mobile: hide menu initially
-        gsap.set(this.menu, { y: -20, opacity: 0, display: "none" });
+        gsap.set(this.menu, {
+          y: -20,
+          opacity: 0,
+          display: "none"
+        });
+  
         this.menuOpen = false;
       } else {
-        // Desktop: always visible, no animation
         gsap.set(this.menu, { clearProps: "all" });
         this.menu.style.display = "block";
         this.menuOpen = false;
@@ -524,8 +545,6 @@ class AnimatedNavbar {
       this.menuOpen ? this.closeMenu() : this.openMenu();
     }
   }
-  
-
 
 
 

@@ -220,3 +220,10 @@
   transition: width .4s ease;
 }
 .service-rule::after { transition: width .4s ease; }
+
+
+
+.active {
+  color: #d4af37;
+  font-weight: 600;
+}
