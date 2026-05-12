@@ -56,6 +56,13 @@
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
 
+  <!-- Owl Carousel CSS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="./assets/css/output.css" />
 </head>
@@ -523,15 +530,9 @@
       <h3 class="text-[#18181B] text-3xl md:text-4xl lg:text-[40px] font-medium leading-[100%] font-aboreto text-center mb-10">
         Our Clients
       </h3>
-      <div class="swiper js-swiper h-full" data-swiper-id="clientsSlider" data-items="1" data-items-mobile="2.1"
-        data-items-tab="4" data-items-desktop="6" data-loop="true" data-center="false" data-space="24"
-        data-nav="false" data-nav-mobile="false" data-nav-tab="false" data-nav-desktop="false" data-dots="false"
-        data-dots-mobile="false" data-dots-tab="false" data-dots-desktop="false" data-autoplay="true"
-        data-autoplay-timeout="4000" data-autoplay-hover-pause="false" data-speed="800" data-nav-img-prev=""
-        data-nav-img-next="" data-effect="slide">
-        <div class="swiper-wrapper justify-center">
+      <div class="owl-carousel clients-carousel">
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c1.jpg" media="(max-width: 640px)" />
@@ -547,7 +548,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c2.jpg" media="(max-width: 640px)" />
@@ -563,7 +564,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c3.jpg" media="(max-width: 640px)" />
@@ -579,7 +580,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c4.jpg" media="(max-width: 640px)" />
@@ -595,7 +596,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c5.jpg" media="(max-width: 640px)" />
@@ -611,7 +612,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c6.jpg" media="(max-width: 640px)" />
@@ -627,7 +628,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c7.jpg" media="(max-width: 640px)" />
@@ -643,7 +644,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c8.jpg" media="(max-width: 640px)" />
@@ -659,7 +660,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c9.jpg" media="(max-width: 640px)" />
@@ -675,7 +676,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c10.jpg" media="(max-width: 640px)" />
@@ -691,7 +692,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c11.jpg" media="(max-width: 640px)" />
@@ -707,7 +708,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c12.jpg" media="(max-width: 640px)" />
@@ -723,7 +724,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c13.jpg" media="(max-width: 640px)" />
@@ -739,7 +740,7 @@
             </picture>
           </div>
 
-          <div class="swiper-slide">
+          <div class="item">
             <picture class="w-full h-full block">
               <!-- Mobile devices -->
               <source srcset="assets/images/clients/c14.jpg" media="(max-width: 640px)" />
@@ -763,10 +764,6 @@
 
         </div>
 
-        <div class="swiper-button-prev" data-nav-id="clientsSlider"></div>
-        <div class="swiper-button-next" data-nav-id="clientsSlider"></div>
-        <div class="swiper-pagination" data-pagination-id="clientsSlider"></div>
-      </div>
       </div>
     </section>
 
@@ -1007,11 +1004,13 @@
 </footer>
 
 
-  <script src="https://code.jquery.com/jquery-4.0.0.min.js"
-    integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 

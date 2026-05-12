@@ -588,5 +588,30 @@ document.addEventListener("DOMContentLoaded", function() {
 $(document).ready(function () {
 
      new CounterAnimation();
+
+
+     $('.clients-carousel').owlCarousel({
+        loop: true,
+        margin: 24,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: false,
+        smartSpeed: 800,
+  
+        responsive: {
+          0: {
+            items: 2.1
+          },
+          641: {
+            items: 4
+          },
+          1025: {
+            items: 6
+          }
+        }
+      });
+  
 });
 
